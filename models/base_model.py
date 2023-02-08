@@ -9,6 +9,7 @@ all common atttributes/methods for other classes
 import uuid
 import datetime
 
+
 class BaseModel():
     '''
     A BaseModel class that defines all common methods
@@ -27,7 +28,8 @@ class BaseModel():
         '''
         Returns a string representation of the base class
         '''
-        return "[{}] ({}) {}".format(self.__class__.__name__, self.id, self.__dict__)
+        return "[{}] ({}) {}".format(self.__class__.__name__,
+                                     self.id, self.__dict__)
 
     def save(self):
         '''
@@ -41,12 +43,10 @@ class BaseModel():
         returns a dictionary representation of the BaseModel class
         '''
         dct = {}
-        
         for key, value in self.__dict__.items():
             if key == "created_at" or key == "updated_at":
                 dct[key] = value.isoformat()
             else:
                 dct[key] = value
         dct['__class__'] = self.__class__.__name__
-        
         return dct
