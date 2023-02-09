@@ -7,6 +7,7 @@ This module contains the FileStorage class
 
 import json
 from models.base_model import BaseModel
+from models.user import User
 
 
 class FileStorage():
@@ -37,25 +38,24 @@ class FileStorage():
         '''
         serializes [__object] to the JSON file
         '''
-        dict = FileStorage.__objects
+        dct = FileStorage.__objects
         objdict = {}
         
-        for key, value in dict.items():
+        for key, value in dct.items():
             objdict[key] = value.to_dict()
-        with open(FileStorage.__file_path, 'w', encoding="utf-8") as file:
-            json.dump(objdict, file)
+        with open(FileStorage.__file_path, 'w') as file:
+            json.dump(objdict, file, indent= 4)
 
     def reload(self):
         '''
         deserializes the JSON file to [__objects]
         '''
         try:
-            with open(FileStorage.__file_path, 'r', encoding="utf-8") as file:
-                file_content = file.read()
-                objdict = json.loads(file_content)
-                for value in objdict.values():
+            with open(FileStorage.__file_path, 'r') as file:
+                objdict = json.load(file)
+                for key,value in objdict.items():
                     objstr = value["__class__"]
-                    del value["__class__"]
-                    self.new(eval(objstr)(**value))
-        except:
-            return
+                    obj = eval(objstr)(**value)
+                    FileStorage.__objects[key] = obj
+        except Exception:
+            pass

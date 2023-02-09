@@ -24,9 +24,6 @@ class BaseModel():
         (Note __class__ from kwargs is the only one
         that should not be added as an attribute
         """
-        self.id = str(uuid.uuid4())
-        self.created_at = datetime.today()
-        self.updated_at = datetime.today()
         if kwargs:
             for key, value in kwargs.items():
                 if key != "__class__":
@@ -38,6 +35,9 @@ class BaseModel():
                 self.updated_at = datetime.strptime(kwargs["updated_at"],
                                                     "%Y-%m-%dT%H:%M:%S.%f")
         else:
+            self.id = str(uuid.uuid4())
+            self.created_at = datetime.today()
+            self.updated_at = datetime.today()
             models.storage.new(self)
 
     def __str__(self):
