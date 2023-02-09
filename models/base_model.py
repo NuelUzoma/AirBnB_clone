@@ -10,12 +10,13 @@ import uuid
 from datetime import datetime
 import models
 
+
 class BaseModel():
     """
     A BaseModel class that defines all common methods
     and attributes for other classes
     """
-    
+
     def __init__(self, *args, **kwargs):
         """
         *args and **kwargs arguments for the BaseModel

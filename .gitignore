@@ -1,0 +1,5 @@
+# All json files
+*.json
+
+# All test sample files
+test*
