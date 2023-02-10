@@ -66,6 +66,7 @@ class TestBaseModel(unittest.TestCase):
         self.assertEqual(str(bm), expected)
 
     def test_save(self):
+        '''Test the [save] method of BaseModel class'''
         base1 = BaseModel()
         old_updated_at = base1.updated_at
         base1.save()
@@ -73,6 +74,7 @@ class TestBaseModel(unittest.TestCase):
         self.assertLess(old_updated_at, base1.updated_at)
 
     def test_dict(self):
+        '''Test the [to_dict] method of the BaseModel class'''
         base1 = BaseModel()
         base1.name = "jerry"
         base1.car = "bentley"
