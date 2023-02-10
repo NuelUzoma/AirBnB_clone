@@ -39,15 +39,17 @@ class TestBaseModel(unittest.TestCase):
         self.assertEqual(base2.created_at, datetime.fromisoformat(created_at))
         self.assertEqual(base2.updated_at, datetime.fromisoformat(updated_at))
         self.assertEqual(base2.id, baseid)
+        with self.assertRaises(AttributeError):
+            self.__class__
 
     def test_str(self):
+        '''Test for the __str__ method'''
         updated_at = '2017-09-28T21:03:54.052302'
         created_at = '2017-09-28T21:03:54.052298'
         baseid = uuid.uuid4().hex
         base2 = BaseModel(updated_at='2017-09-28T21:03:54.052302',
                           created_at='2017-09-28T21:03:54.052298',
                           id=baseid, __class__="basemodel")
-        
         
         
 

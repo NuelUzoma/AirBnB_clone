@@ -8,6 +8,7 @@ all common atttributes/methods for other classes
 
 import uuid
 from datetime import datetime
+import models
 
 
 class BaseModel():
@@ -16,13 +17,29 @@ class BaseModel():
     and attributes for other classes
     """
 
-    def __init__(self):
+    def __init__(self, *args, **kwargs):
         """
-        creates a new instance of the BaseModel class
+        *args and **kwargs arguments for the BaseModel
+        if kwargs is not empty:
+        each key of this dictionary is an attribute name
+        (Note __class__ from kwargs is the only one
+        that should not be added as an attribute
         """
-        self.id = str(uuid.uuid4())
-        self.created_at = datetime.now()
-        self.updated_at = datetime.now()
+        if kwargs:
+            for key, value in kwargs.items():
+                if key != "__class__":
+                    setattr(self, key, value)
+            if "created_at" in kwargs:
+                self.created_at = datetime.strptime(kwargs["created_at"],
+                                                    "%Y-%m-%dT%H:%M:%S.%f")
+            if "updated_at" in kwargs:
+                self.updated_at = datetime.strptime(kwargs["updated_at"],
+                                                    "%Y-%m-%dT%H:%M:%S.%f")
+        else:
+            self.id = str(uuid.uuid4())
+            self.created_at = datetime.today()
+            self.updated_at = datetime.today()
+            models.storage.new(self)
 
     def __str__(self):
         '''
@@ -36,7 +53,8 @@ class BaseModel():
         updates the public instance attribute [update_at] with
         the current datetime
         """
-        self.updated_at = datetime.now()
+        self.updated_at = datetime.today()
+        models.storage.save()
 
     def to_dict(self):
         """
@@ -47,25 +65,3 @@ class BaseModel():
         dct["created_at"] = self.created_at.isoformat()
         dct["updated_at"] = self.updated_at.isoformat()
         return dct
-
-    def __init__(self, *args, **kwargs):
-        """
-        *args and **kwargs arguments for the BaseModel
-        if kwargs is not empty:
-        each key of this dictionary is an attribute name
-        (Note __class__ from kwargs is the only one
-        that should not be added as an attribute
-        """
-        self.id = str(uuid.uuid4())
-        self.created_at = datetime.now()
-        self.updated_at = datetime.now()
-        if kwargs:
-            for key, value in kwargs.items():
-                if key != "__class__":
-                    setattr(self, key, value)
-            if "created_at" in kwargs:
-                self.created_at = datetime.strptime(kwargs["created_at"],
-                                                    "%Y-%m-%dT%H:%M:%S.%f")
-            if "updated_at" in kwargs:
-                self.updated_at = datetime.strptime(kwargs["updated_at"],
-                                                    "%Y-%m-%dT%H:%M:%S.%f")

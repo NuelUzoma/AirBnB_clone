@@ -60,5 +60,13 @@
         "email": "airbnb2@mail.com",
         "password": "root",
         "__class__": "User"
+    },
+    "BaseModel.ff85884e-b9d8-40cd-851d-6774bf8c363e": {
+        "id": "ff85884e-b9d8-40cd-851d-6774bf8c363e",
+        "created_at": "2023-02-10T12:18:01.180557",
+        "updated_at": "2023-02-10T12:18:01.180632",
+        "name": "My_First_Model",
+        "my_number": 89,
+        "__class__": "BaseModel"
     }
 }
