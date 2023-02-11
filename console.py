@@ -41,7 +41,13 @@ class HBNBCommand(cmd.Cmd):
         line_split = line.split()
         if line == "":
             print("** class name missing **")
-        elif line_split[0] != "BaseModel":  # show MyModel
+        elif line_split[0] not in ["BaseModel",
+                               "Amenity",
+                               "City",
+                               "Place",
+                               "Review",
+                               "State",
+                               ]:  # show MyModel
             print("** class doesn't exist **")
         elif len(line_split) != 2:
             print("** instance id missing **")
