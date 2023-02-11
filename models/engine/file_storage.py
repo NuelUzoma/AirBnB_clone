@@ -15,12 +15,11 @@ from models.review import Review
 from models.state import State
 
 
-
 class FileStorage():
     '''
     FileStorage class that serializes and deserializes python objects
     '''
-    
+
     __file_path = "file.json"
     __objects = {}
 
@@ -33,7 +32,7 @@ class FileStorage():
     def new(self, obj):
         '''
         Sets in [__objects] the obj with the key <obj classname>.id
-        
+
         args:
             obj - The object to add to the [__objects] class attribute
         '''
@@ -46,11 +45,11 @@ class FileStorage():
         '''
         dct = FileStorage.__objects
         objdict = {}
-        
+
         for key, value in dct.items():
             objdict[key] = value.to_dict()
         with open(FileStorage.__file_path, 'w') as file:
-            json.dump(objdict, file, indent= 4)
+            json.dump(objdict, file, indent=4)
 
     def reload(self):
         '''
@@ -59,7 +58,7 @@ class FileStorage():
         try:
             with open(FileStorage.__file_path, 'r') as file:
                 objdict = json.load(file)
-                for key,value in objdict.items():
+                for key, value in objdict.items():
                     objstr = value["__class__"]
                     obj = eval(objstr)(**value)
                     FileStorage.__objects[key] = obj

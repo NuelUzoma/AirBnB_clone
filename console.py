@@ -5,6 +5,7 @@ The console command line intepreter
 
 import json
 import cmd
+import sys
 from models.base_model import BaseModel
 from models.engine.file_storage import FileStorage, User
 from models import storage
@@ -95,6 +96,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_update(self, line):
         """Updates an instance based on class name and id"""
+
         line_splts = line.split()
         if line == "":  # update
             print("** class name missing **")
