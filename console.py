@@ -4,11 +4,12 @@ The console command line intepreter
 """
 
 import json
-import cmd, sys
+import cmd
 from models.base_model import BaseModel
 from models.engine.file_storage import FileStorage
 from models import storage
 from models.user import User
+
 
 class HBNBCommand(cmd.Cmd):
     """Simple command processor example"""
@@ -17,7 +18,7 @@ class HBNBCommand(cmd.Cmd):
     def do_quit(self, line):
         """Quit command to exit the program"""
         return True
-    
+
     def do_EOF(self, line):
         """The End of File for the console"""
         return True
@@ -28,19 +29,21 @@ class HBNBCommand(cmd.Cmd):
         obj.save()
         if line == "":
             print("** class name missing **")
-        elif line != "User" or  line != "BaseModel":
+        elif line != "User" or line != "BaseModel":
             print("** class doesn't exists **")
         else:
             print(obj.id)
 
     def do_show(self, line):
-        """Prints the string representation of an instance based on class name"""
+        """
+        Prints the string representation of an instance based on class name
+        """
         line_split = line.split()
         if line == "":
             print("** class name missing **")
-        elif line_split[0] != "BaseModel": #show MyModel
+        elif line_split[0] != "BaseModel":  # show MyModel
             print("** class doesn't exist **")
-        elif len(line_split) != 2: 
+        elif len(line_split) != 2:
             print("** instance id missing **")
         else:
             key = "{}.{}".format(line_split[0], line_split[1])
@@ -84,17 +87,18 @@ class HBNBCommand(cmd.Cmd):
                     if isinstance(value, eval(line_splt[0])):
                         list_objs.append(str(value))
             print(list_objs)
-    
+
     def do_update(self, line):
         """Updates an instance based on class name and id"""
+
         line_splts = line.split()
-        if line == "": #update
+        if line == "":  # update
             print("** class name missing **")
-        elif line_splts[0] != "BaseModel": #update MymOdel
+        elif line_splts[0] != "BaseModel":  # update MymOdel
             print("** class doesn't exist **")
-        elif len(line_splts) == 1: #update BaseModel <no id>
+        elif len(line_splts) == 1:  # update BaseModel <no id>
             print("** instance id missing **")
-        elif len(line_splts) == 2: #update BaseModel 241545
+        elif len(line_splts) == 2:  # update BaseModel 241545
             print("** attribute name missing **")
         elif len(line_splts) == 3:
             print("** value missing **")
@@ -109,6 +113,7 @@ class HBNBCommand(cmd.Cmd):
                 storage.save()
             else:
                 print("** no instance found **")
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
