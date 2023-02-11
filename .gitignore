@@ -1,6 +1,6 @@
 # All json files
 *.json
-file.json
+./file.json
 
 # All test sample files
-test*
+test_*
