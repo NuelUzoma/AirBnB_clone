@@ -6,32 +6,39 @@ The console command line intepreter
 import json
 import cmd, sys
 from models.base_model import BaseModel
-from models.engine.file_storage import FileStorage
+from models.engine.file_storage import FileStorage, User
 from models import storage
-from models.user import User
 
 class HBNBCommand(cmd.Cmd):
     """Simple command processor example"""
     prompt = '(hbnb) '
 
     def do_quit(self, line):
-        """Quit command to exit the program"""
+        """Quit command to exit the program
+        """
         return True
     
     def do_EOF(self, line):
         """The End of File for the console"""
         return True
+    
+    def emptyline(self):
+        pass
 
     def do_create(self, line):
         """Creates a new instance of BaseModel and saves it to JSON File"""
-        obj = eval(line)()
-        obj.save()
         if line == "":
             print("** class name missing **")
-        elif line != "User" or  line != "BaseModel":
+            return
+        
+        try:
+            obj = eval(line)()
+        except NameError:
             print("** class doesn't exists **")
-        else:
-            print(obj.id)
+            return
+        
+        print(obj.id)
+        obj.save()
 
     def do_show(self, line):
         """Prints the string representation of an instance based on class name"""
