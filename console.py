@@ -5,6 +5,7 @@ The console command line intepreter
 
 import json
 import cmd
+import sys
 from models.base_model import BaseModel
 from models.engine.file_storage import FileStorage, User
 from models import storage
@@ -42,9 +43,7 @@ class HBNBCommand(cmd.Cmd):
         obj.save()
 
     def do_show(self, line):
-        """
-        Prints the string representation of an instance based on class name
-        """
+        """Prints the string representation of an instance"""
         line_split = line.split()
         if line == "":
             print("** class name missing **")
@@ -79,7 +78,7 @@ class HBNBCommand(cmd.Cmd):
             key = "{}.{}".format(line_splits[0], line_splits[1])
             objs = storage.all()
             if key in objs.keys():
-                del(objs[key])
+                del (objs[key])
                 storage.save()
             else:
                 print("** no instance found **")
