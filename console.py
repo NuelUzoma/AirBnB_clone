@@ -22,7 +22,7 @@ class HBNBCommand(cmd.Cmd):
     def do_EOF(self, line):
         """The End of File for the console"""
         return True
-    
+
     def emptyline(self):
         pass
 
@@ -31,13 +31,13 @@ class HBNBCommand(cmd.Cmd):
         if line == "":
             print("** class name missing **")
             return
-        
+
         try:
             obj = eval(line)()
         except NameError:
             print("** class doesn't exists **")
             return
-        
+
         print(obj.id)
         obj.save()
 
@@ -49,12 +49,12 @@ class HBNBCommand(cmd.Cmd):
         if line == "":
             print("** class name missing **")
         elif line_split[0] not in ["BaseModel",
-                               "Amenity",
-                               "City",
-                               "Place",
-                               "Review",
-                               "State",
-                               ]:  # show MyModel
+                                   "Amenity",
+                                   "City",
+                                   "Place",
+                                   "Review",
+                                   "State",
+                                   ]:  # show MyModel
             print("** class doesn't exist **")
         elif len(line_split) != 2:
             print("** instance id missing **")
