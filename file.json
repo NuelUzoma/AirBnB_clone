@@ -683,5 +683,56 @@
         "created_at": "2023-02-11T17:13:10.566762",
         "updated_at": "2023-02-11T17:13:10.566769",
         "__class__": "BaseModel"
+    },
+    "BaseModel.5c52dbd5-c661-4945-82c3-dd4781527196": {
+        "id": "5c52dbd5-c661-4945-82c3-dd4781527196",
+        "created_at": "2023-02-11T23:00:16.140426",
+        "updated_at": "2023-02-11T23:00:16.140630",
+        "__class__": "BaseModel"
+    },
+    "Place.94bb893a-f854-446b-99a1-a434ff64dc1c": {
+        "id": "94bb893a-f854-446b-99a1-a434ff64dc1c",
+        "created_at": "2023-02-11T23:00:28.105710",
+        "updated_at": "2023-02-11T23:00:28.105824",
+        "__class__": "Place"
+    },
+    "Amenity.bd79fb13-0ee2-4b7a-9046-97c5d5342b9b": {
+        "id": "bd79fb13-0ee2-4b7a-9046-97c5d5342b9b",
+        "created_at": "2023-02-11T23:12:18.556343",
+        "updated_at": "2023-02-11T23:12:18.556510",
+        "email": "jerry@gmail.com",
+        "__class__": "Amenity"
+    },
+    "BaseModel.ec82a66a-7701-44fd-bfe5-63921f2474ce": {
+        "id": "ec82a66a-7701-44fd-bfe5-63921f2474ce",
+        "created_at": "2023-02-11T23:37:33.179481",
+        "updated_at": "2023-02-11T23:37:33.179545",
+        "__class__": "BaseModel"
+    },
+    "BaseModel.8f4f6a8e-e84a-4695-af6b-65527320aeba": {
+        "id": "8f4f6a8e-e84a-4695-af6b-65527320aeba",
+        "created_at": "2023-02-11T23:41:59.789218",
+        "updated_at": "2023-02-11T23:41:59.789328",
+        "email": "'kc'",
+        "instance": "10",
+        "__class__": "BaseModel"
+    },
+    "City.963a567d-f521-4d01-9e77-6d6ea5d5c36e": {
+        "id": "963a567d-f521-4d01-9e77-6d6ea5d5c36e",
+        "created_at": "2023-02-11T23:53:53.603556",
+        "updated_at": "2023-02-11T23:53:53.603674",
+        "__class__": "City"
+    },
+    "City.14f4c929-a961-4694-877a-b46f86546e81": {
+        "id": "14f4c929-a961-4694-877a-b46f86546e81",
+        "created_at": "2023-02-11T23:55:05.706915",
+        "updated_at": "2023-02-11T23:55:05.706980",
+        "__class__": "City"
+    },
+    "Review.a80ed588-cbb2-48ef-9a50-54799374e677": {
+        "id": "a80ed588-cbb2-48ef-9a50-54799374e677",
+        "created_at": "2023-02-11T23:57:46.171205",
+        "updated_at": "2023-02-11T23:57:46.171448",
+        "__class__": "Review"
     }
 }

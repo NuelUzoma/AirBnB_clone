@@ -7,7 +7,7 @@ import json
 import cmd
 import sys
 from models.base_model import BaseModel
-from models.engine.file_storage import FileStorage, User
+from models.engine.file_storage import *
 from models import storage
 
 
@@ -53,6 +53,7 @@ class HBNBCommand(cmd.Cmd):
                                    "Place",
                                    "Review",
                                    "State",
+                                   "User"
                                    ]:  # show MyModel
             print("** class doesn't exist **")
         elif len(line_split) != 2:
@@ -70,7 +71,13 @@ class HBNBCommand(cmd.Cmd):
         line_splits = line.split()
         if line == "":
             print("** class name missing **")
-        elif line_splits[0] != "BaseModel":
+        elif line_splits[0] not in ["BaseModel",
+                                    "Amenity",
+                                    "City",
+                                    "Place",
+                                    "Review",
+                                    "State",
+                                    "User"]:
             print("** class doesn't exist **")
         elif len(line_splits) != 2:
             print("** instance id missing **")
@@ -87,7 +94,13 @@ class HBNBCommand(cmd.Cmd):
         """Prints all string representation of all instances"""
         line_splt = line.split()
         objectts = storage.all()
-        if len(line_splt) > 0 and line_splt[0] != "BaseModel":
+        if len(line_splt) > 0 and line_splt[0] not in ["BaseModel",
+                                                       "Amenity",
+                                                       "City",
+                                                       "Place",
+                                                       "Review",
+                                                       "State",
+                                                       "User"]:
             print("** class doesn't exist **")
         else:
             list_objs = []
@@ -106,7 +119,14 @@ class HBNBCommand(cmd.Cmd):
         line_splts = line.split()
         if line == "":  # update
             print("** class name missing **")
-        elif line_splts[0] != "BaseModel":  # update MymOdel
+        elif line_splts[0] not in ["BaseModel",
+                                   "Amenity",
+                                   "City",
+                                   "Place",
+                                   "Review",
+                                   "State",
+                                   "User"
+                                   ]:  # update MymOdel
             print("** class doesn't exist **")
         elif len(line_splts) == 1:  # update BaseModel <no id>
             print("** instance id missing **")
@@ -120,9 +140,16 @@ class HBNBCommand(cmd.Cmd):
             if key_1 in dict_1.keys():
                 obj_1 = dict_1[key_1]
                 obj_replace = line_splts[3].replace('"', '')
-                obj_1.__dict__[line_splts[2]] = obj_replace
-                dict_1[key_1] = obj_1
-                storage.save()
+
+                if line_splts[2] not in ["updated_at", "id", "created_at"]:
+                    if line_splts[2] in obj_1.__dict__.keys():
+                        new_obj_replace = type(obj_1.__dict__[line_splts[2]])
+                        (obj_replace)
+                    else:
+                        new_obj_replace = obj_replace
+                    obj_1.__dict__[line_splts[2]] = new_obj_replace
+                    dict_1[key_1] = obj_1
+                    storage.save()
             else:
                 print("** no instance found **")
 
