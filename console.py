@@ -117,6 +117,7 @@ class HBNBCommand(cmd.Cmd):
         """Updates an instance based on class name and id"""
 
         line_splts = line.split()
+        dict_1 = storage.all()
         if line == "":  # update
             print("** class name missing **")
         elif line_splts[0] not in ["BaseModel",
@@ -131,12 +132,15 @@ class HBNBCommand(cmd.Cmd):
         elif len(line_splts) == 1:  # update BaseModel <no id>
             print("** instance id missing **")
         elif len(line_splts) == 2:  # update BaseModel 241545
-            print("** attribute name missing **")
+            key = "{}.{}".format(line_splts[0], line_splts[1])
+            if key not in dict_1.keys():
+                print("** no instance found **")
+            else:
+                print("** attribute name missing **")
         elif len(line_splts) == 3:
             print("** value missing **")
         else:
             key_1 = "{}.{}".format(line_splts[0], line_splts[1])
-            dict_1 = storage.all()
             if key_1 in dict_1.keys():
                 obj_1 = dict_1[key_1]
                 obj_replace = line_splts[3].replace('"', '')
