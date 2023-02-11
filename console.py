@@ -8,6 +8,7 @@ import cmd, sys
 from models.base_model import BaseModel
 from models.engine.file_storage import FileStorage
 from models import storage
+from models.user import User
 
 class HBNBCommand(cmd.Cmd):
     """Simple command processor example"""
@@ -27,7 +28,7 @@ class HBNBCommand(cmd.Cmd):
         obj.save()
         if line == "":
             print("** class name missing **")
-        elif line != "BaseModel":
+        elif line != "User" or  line != "BaseModel":
             print("** class doesn't exists **")
         else:
             print(obj.id)
