@@ -431,5 +431,257 @@
         "created_at": "2023-02-10T14:21:45.870866",
         "updated_at": "2023-02-10T14:21:45.870874",
         "__class__": "BaseModel"
+    },
+    "BaseModel.c550ba8b-dd85-4d5d-b3ee-65ad1fd5cecb": {
+        "id": "c550ba8b-dd85-4d5d-b3ee-65ad1fd5cecb",
+        "created_at": "2023-02-10T14:29:51.071774",
+        "updated_at": "2023-02-10T14:29:51.071788",
+        "name": "jerry",
+        "car": "bentley",
+        "__class__": "BaseModel"
+    },
+    "BaseModel.c9902cbb-f420-4f03-8d1c-13662c923f49": {
+        "id": "c9902cbb-f420-4f03-8d1c-13662c923f49",
+        "created_at": "2023-02-10T14:29:51.071927",
+        "updated_at": "2023-02-10T14:29:51.071931",
+        "__class__": "BaseModel"
+    },
+    "BaseModel.8adec363-f5f1-4b1e-9a2b-daaa0a55e660": {
+        "id": "8adec363-f5f1-4b1e-9a2b-daaa0a55e660",
+        "created_at": "2023-02-10T14:29:51.072013",
+        "updated_at": "2023-02-10T14:29:51.072016",
+        "__class__": "BaseModel"
+    },
+    "BaseModel.f2dcfd2d-c8f9-4112-87b1-d510000aea5d": {
+        "id": "f2dcfd2d-c8f9-4112-87b1-d510000aea5d",
+        "created_at": "2023-02-10T14:29:51.072025",
+        "updated_at": "2023-02-10T14:29:51.072026",
+        "__class__": "BaseModel"
+    },
+    "BaseModel.aeb3970d-a034-4051-b27c-062bf04128c5": {
+        "id": "aeb3970d-a034-4051-b27c-062bf04128c5",
+        "created_at": "2023-02-10T14:29:51.072109",
+        "updated_at": "2023-02-10T14:29:51.072116",
+        "__class__": "BaseModel"
+    },
+    "BaseModel.97ea824f-34b5-43bb-ae05-906d7c8c0f1d": {
+        "id": "97ea824f-34b5-43bb-ae05-906d7c8c0f1d",
+        "created_at": "2023-02-10T14:33:57.142071",
+        "updated_at": "2023-02-10T14:33:57.142079",
+        "name": "jerry",
+        "car": "bentley",
+        "__class__": "BaseModel"
+    },
+    "BaseModel.f826c8b3-630b-41ea-a974-958165c8737f": {
+        "id": "f826c8b3-630b-41ea-a974-958165c8737f",
+        "created_at": "2023-02-10T14:33:57.142204",
+        "updated_at": "2023-02-10T14:33:57.142208",
+        "__class__": "BaseModel"
+    },
+    "BaseModel.65fb6829-ea44-4439-9824-ca53a91517e8": {
+        "id": "65fb6829-ea44-4439-9824-ca53a91517e8",
+        "created_at": "2023-02-10T14:33:57.142316",
+        "updated_at": "2023-02-10T14:33:57.142320",
+        "__class__": "BaseModel"
+    },
+    "BaseModel.9a514fda-9bcd-474c-87a0-a10b6ce0dad7": {
+        "id": "9a514fda-9bcd-474c-87a0-a10b6ce0dad7",
+        "created_at": "2023-02-10T14:33:57.142329",
+        "updated_at": "2023-02-10T14:33:57.142331",
+        "__class__": "BaseModel"
+    },
+    "BaseModel.85c699d7-201d-4142-9d30-c10033e5b9f1": {
+        "id": "85c699d7-201d-4142-9d30-c10033e5b9f1",
+        "created_at": "2023-02-10T14:33:57.142431",
+        "updated_at": "2023-02-10T14:33:57.142438",
+        "__class__": "BaseModel"
+    },
+    "BaseModel.2ad18985-4826-400b-97fd-66e6230cb815": {
+        "id": "2ad18985-4826-400b-97fd-66e6230cb815",
+        "created_at": "2023-02-10T14:34:15.526847",
+        "updated_at": "2023-02-10T14:34:15.526857",
+        "name": "jerry",
+        "car": "bentley",
+        "__class__": "BaseModel"
+    },
+    "BaseModel.6056abde-a12a-4ae1-afcb-47b13f2aea05": {
+        "id": "6056abde-a12a-4ae1-afcb-47b13f2aea05",
+        "created_at": "2023-02-10T14:34:15.526992",
+        "updated_at": "2023-02-10T14:34:15.526996",
+        "__class__": "BaseModel"
+    },
+    "BaseModel.c04557bb-0dbb-4024-8190-39f5848aaad2": {
+        "id": "c04557bb-0dbb-4024-8190-39f5848aaad2",
+        "created_at": "2023-02-10T14:34:15.527088",
+        "updated_at": "2023-02-10T14:34:15.527090",
+        "__class__": "BaseModel"
+    },
+    "BaseModel.fe5a986d-e332-40e6-9f96-313b6456a84f": {
+        "id": "fe5a986d-e332-40e6-9f96-313b6456a84f",
+        "created_at": "2023-02-10T14:34:15.527099",
+        "updated_at": "2023-02-10T14:34:15.527100",
+        "__class__": "BaseModel"
+    },
+    "BaseModel.74276789-d15e-4302-9a74-654c33334a29": {
+        "id": "74276789-d15e-4302-9a74-654c33334a29",
+        "created_at": "2023-02-10T14:34:15.527185",
+        "updated_at": "2023-02-10T14:34:15.527192",
+        "__class__": "BaseModel"
+    },
+    "Amenity.211466db-51dd-4c79-95a1-da6b3852ff29": {
+        "id": "211466db-51dd-4c79-95a1-da6b3852ff29",
+        "created_at": "2023-02-10T15:02:57.567002",
+        "updated_at": "2023-02-10T15:02:57.567012",
+        "name": "Electricity",
+        "__class__": "Amenity"
+    },
+    "Amenity.f310d137-ebfa-45eb-ab7f-9f3d9bd4f42d": {
+        "id": "f310d137-ebfa-45eb-ab7f-9f3d9bd4f42d",
+        "created_at": "2023-02-10T15:02:57.567139",
+        "updated_at": "2023-02-10T15:02:57.567143",
+        "__class__": "Amenity"
+    },
+    "Amenity.1677bdf8-1fc1-46c5-a2dd-1fea1f943da3": {
+        "id": "1677bdf8-1fc1-46c5-a2dd-1fea1f943da3",
+        "created_at": "2023-02-10T15:02:57.567249",
+        "updated_at": "2023-02-10T15:02:57.567252",
+        "name": "Awka",
+        "__class__": "Amenity"
+    },
+    "BaseModel.9903130f-a38b-40c0-9537-0cbec0175ee6": {
+        "id": "9903130f-a38b-40c0-9537-0cbec0175ee6",
+        "created_at": "2023-02-10T15:02:57.567375",
+        "updated_at": "2023-02-10T15:02:57.567379",
+        "name": "jerry",
+        "car": "bentley",
+        "__class__": "BaseModel"
+    },
+    "BaseModel.923608b7-666f-483d-92fe-f127d196a736": {
+        "id": "923608b7-666f-483d-92fe-f127d196a736",
+        "created_at": "2023-02-10T15:02:57.567469",
+        "updated_at": "2023-02-10T15:02:57.567473",
+        "__class__": "BaseModel"
+    },
+    "BaseModel.31b6ba95-10cb-4adc-858d-5d66eef1f4ec": {
+        "id": "31b6ba95-10cb-4adc-858d-5d66eef1f4ec",
+        "created_at": "2023-02-10T15:02:57.567575",
+        "updated_at": "2023-02-10T15:02:57.567577",
+        "__class__": "BaseModel"
+    },
+    "BaseModel.ae44b3d0-6de6-4643-87be-19a66a19b9e1": {
+        "id": "ae44b3d0-6de6-4643-87be-19a66a19b9e1",
+        "created_at": "2023-02-10T15:02:57.567587",
+        "updated_at": "2023-02-10T15:02:57.567588",
+        "__class__": "BaseModel"
+    },
+    "BaseModel.2776b17d-a282-403b-afbc-60af0f3ef3db": {
+        "id": "2776b17d-a282-403b-afbc-60af0f3ef3db",
+        "created_at": "2023-02-10T15:02:57.567683",
+        "updated_at": "2023-02-10T15:02:57.567691",
+        "__class__": "BaseModel"
+    },
+    "Amenity.f825655e-7d66-4d45-8d5f-92e5d3bcbd6d": {
+        "id": "f825655e-7d66-4d45-8d5f-92e5d3bcbd6d",
+        "created_at": "2023-02-11T16:34:58.349936",
+        "updated_at": "2023-02-11T16:34:58.350066",
+        "name": "Electricity",
+        "__class__": "Amenity"
+    },
+    "Amenity.6a5dda39-63a1-491d-affc-00ab81e7c4c3": {
+        "id": "6a5dda39-63a1-491d-affc-00ab81e7c4c3",
+        "created_at": "2023-02-11T16:34:58.350245",
+        "updated_at": "2023-02-11T16:34:58.350251",
+        "__class__": "Amenity"
+    },
+    "Amenity.c8f66e3d-a805-4138-bf06-5f143eeb84f0": {
+        "id": "c8f66e3d-a805-4138-bf06-5f143eeb84f0",
+        "created_at": "2023-02-11T16:34:58.350468",
+        "updated_at": "2023-02-11T16:34:58.350474",
+        "name": "Awka",
+        "__class__": "Amenity"
+    },
+    "BaseModel.b564135e-1336-4eb1-813a-91550f6dd7ab": {
+        "id": "b564135e-1336-4eb1-813a-91550f6dd7ab",
+        "created_at": "2023-02-11T16:34:58.350683",
+        "updated_at": "2023-02-11T16:34:58.350690",
+        "name": "jerry",
+        "car": "bentley",
+        "__class__": "BaseModel"
+    },
+    "BaseModel.107d50ce-b2c2-4dbb-9bb0-8f642bbc0289": {
+        "id": "107d50ce-b2c2-4dbb-9bb0-8f642bbc0289",
+        "created_at": "2023-02-11T16:34:58.350832",
+        "updated_at": "2023-02-11T16:34:58.350838",
+        "__class__": "BaseModel"
+    },
+    "BaseModel.b86eed0b-77bc-4853-a250-834f30a36fdb": {
+        "id": "b86eed0b-77bc-4853-a250-834f30a36fdb",
+        "created_at": "2023-02-11T16:34:58.351082",
+        "updated_at": "2023-02-11T16:34:58.351087",
+        "__class__": "BaseModel"
+    },
+    "BaseModel.fd0f2b0d-0e3a-40c4-974f-58b6e3e5d9bc": {
+        "id": "fd0f2b0d-0e3a-40c4-974f-58b6e3e5d9bc",
+        "created_at": "2023-02-11T16:34:58.351104",
+        "updated_at": "2023-02-11T16:34:58.351106",
+        "__class__": "BaseModel"
+    },
+    "BaseModel.d013855c-cc7c-461d-9be3-aba73fb5ae3d": {
+        "id": "d013855c-cc7c-461d-9be3-aba73fb5ae3d",
+        "created_at": "2023-02-11T16:34:58.351308",
+        "updated_at": "2023-02-11T16:34:58.351320",
+        "__class__": "BaseModel"
+    },
+    "Amenity.040e5fa4-def9-49a0-b3e7-872d48086dca": {
+        "id": "040e5fa4-def9-49a0-b3e7-872d48086dca",
+        "created_at": "2023-02-11T17:13:10.565991",
+        "updated_at": "2023-02-11T17:13:10.566042",
+        "name": "Electricity",
+        "__class__": "Amenity"
+    },
+    "Amenity.bcff5f87-1985-4fbe-941f-51b9b549a5c0": {
+        "id": "bcff5f87-1985-4fbe-941f-51b9b549a5c0",
+        "created_at": "2023-02-11T17:13:10.566156",
+        "updated_at": "2023-02-11T17:13:10.566160",
+        "__class__": "Amenity"
+    },
+    "Amenity.d9e9368f-11e2-471f-8a4d-1a9e38fe0298": {
+        "id": "d9e9368f-11e2-471f-8a4d-1a9e38fe0298",
+        "created_at": "2023-02-11T17:13:10.566291",
+        "updated_at": "2023-02-11T17:13:10.566294",
+        "name": "Awka",
+        "__class__": "Amenity"
+    },
+    "BaseModel.4a1e0c76-7129-4487-bf94-82d4d1679f47": {
+        "id": "4a1e0c76-7129-4487-bf94-82d4d1679f47",
+        "created_at": "2023-02-11T17:13:10.566406",
+        "updated_at": "2023-02-11T17:13:10.566410",
+        "name": "jerry",
+        "car": "bentley",
+        "__class__": "BaseModel"
+    },
+    "BaseModel.158323e0-cb1f-42c7-8eba-278fa6a141d5": {
+        "id": "158323e0-cb1f-42c7-8eba-278fa6a141d5",
+        "created_at": "2023-02-11T17:13:10.566491",
+        "updated_at": "2023-02-11T17:13:10.566494",
+        "__class__": "BaseModel"
+    },
+    "BaseModel.86401024-2ece-4459-a95c-7a9e8cabcfb8": {
+        "id": "86401024-2ece-4459-a95c-7a9e8cabcfb8",
+        "created_at": "2023-02-11T17:13:10.566640",
+        "updated_at": "2023-02-11T17:13:10.566643",
+        "__class__": "BaseModel"
+    },
+    "BaseModel.65396e12-3552-4817-8ec4-9e4480fbf3e3": {
+        "id": "65396e12-3552-4817-8ec4-9e4480fbf3e3",
+        "created_at": "2023-02-11T17:13:10.566652",
+        "updated_at": "2023-02-11T17:13:10.566654",
+        "__class__": "BaseModel"
+    },
+    "BaseModel.6e115cd5-d6d2-4ebf-a2df-f7912ec9eb6f": {
+        "id": "6e115cd5-d6d2-4ebf-a2df-f7912ec9eb6f",
+        "created_at": "2023-02-11T17:13:10.566762",
+        "updated_at": "2023-02-11T17:13:10.566769",
+        "__class__": "BaseModel"
     }
 }
