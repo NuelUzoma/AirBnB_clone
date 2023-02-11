@@ -22,7 +22,7 @@ class BaseModel():
         *args and **kwargs arguments for the BaseModel
         if kwargs is not empty:
         each key of this dictionary is an attribute name
-        (Note __class__ from kwargs is the only one
+        Note: __class__ from kwargs is the only one
         that should not be added as an attribute
         """
         if kwargs:
