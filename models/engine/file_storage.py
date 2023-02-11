@@ -16,10 +16,11 @@ from models.state import State
 
 
 class FileStorage():
-    '''
-    FileStorage class that serializes and deserializes python objects
-    '''
-
+    """Represent an abstracted storage engine.
+    Attributes:
+        __file_path (str): The name of the file to save objects to.
+        __objects (dict): A dictionary of instantiated objects.
+    """
     __file_path = "file.json"
     __objects = {}
 
@@ -33,7 +34,7 @@ class FileStorage():
         '''
         Sets in [__objects] the obj with the key <obj classname>.id
 
-        args:
+        Args:
             obj - The object to add to the [__objects] class attribute
         '''
         key = "{}.{}".format(obj.__class__.__name__, obj.id)
