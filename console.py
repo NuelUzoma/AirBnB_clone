@@ -70,7 +70,34 @@ class HBNBCommand(cmd.Cmd):
                     1) or "") + " " + (match_attr_and_value.group(2) or "")
         command = method + " " + classname + " " + uid + " " + attr_and_value
         self.onecmd(command)
-        return command
+
+    def update_dict(self, classname, uid, s_dict):
+        """Helper method for update() with a dictionary."""
+        s = s_dict.replace("'", '"')
+        d = json.loads(s)
+        if not classname:
+            print("** class name missing **")
+        elif classname not in ["BaseModel",
+                               "Amenity",
+                               "City",
+                               "Place",
+                               "Review",
+                               "State",
+                               "User"]:
+            print("** class doesn't exist **")
+        elif uid is None:
+            print("** instance id missing **")
+        else:
+            key = "{}.{}".format(classname, uid)
+            if key not in storage.all():
+                print("** no instance found **")
+            else:
+                attributes = storage.attributes()[classname]
+                for attribute, value in d.items():
+                    if attribute in attributes:
+                        value = attributes[attribute](value)
+                    setattr(storage.all()[key], attribute, value)
+                storage.all()[key].save()
 
     def do_quit(self, line):
         """Quit command to exit the program
@@ -170,6 +197,17 @@ class HBNBCommand(cmd.Cmd):
                     if isinstance(value, eval(line_splt[0])):
                         list_objs.append(str(value))
             print(list_objs)
+
+    def do_count(self, line):
+        """Count the total number of an object in memory"""
+        line_split = line.split()
+        all_objects = storage.all()
+        
+        count = 0
+        for value in all_objects.values():
+            if type(value) is eval(line_split[0]):
+                count = count + 1
+        print(count)
 
     def do_update(self, line):
         """Updates an instance based on class name and id"""
