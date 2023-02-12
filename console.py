@@ -8,6 +8,7 @@ import cmd
 from models.base_model import BaseModel
 from models.engine.file_storage import *
 from models import storage
+import sys
 
 
 class HBNBCommand(cmd.Cmd):
@@ -158,4 +159,11 @@ class HBNBCommand(cmd.Cmd):
 
 
 if __name__ == '__main__':
-    HBNBCommand().cmdloop()
+    cmd = HBNBCommand()
+    if len(sys.argv) > 1:
+        # Non-interactive mode
+        for arg in sys.argv[1:]:
+            cmd.onecmd(arg)
+    else:
+        # Interactive mode
+        cmd.cmdloop()
