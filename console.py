@@ -42,6 +42,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_EOF(self, line):
         """The End of File for the console"""
+        print()
         return True
 
     def emptyline(self):
