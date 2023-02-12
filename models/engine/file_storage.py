@@ -1,10 +1,5 @@
 #!/usr/bin/python3
-
-'''
-This module contains the FileStorage class
-'''
-
-
+"""This module contains the FileStorage class"""
 import json
 from models.base_model import BaseModel
 from models.user import User
