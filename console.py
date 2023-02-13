@@ -216,20 +216,20 @@ class HBNBCommand(cmd.Cmd):
             key_1 = "{}.{}".format(line_splts[0], line_splts[1])
             if key_1 in dict_1.keys():
                 obj_1 = dict_1[key_1]
-                obj_replace = line_splts[3].replace('"', '')
-
-                if obj_replace.find(".") > 0:
-                    cast = float
-                else:
-                    cast = int
-                if line_splts[2] not in ["updated_at", "id", "created_at"]:
-                    try:
-                        new_obj_replace = cast(obj_replace)
-                    except Exception:
-                        new_obj_replace = obj_replace
-                    obj_1.__dict__[line_splts[2]] = new_obj_replace
-                    dict_1[key_1] = obj_1
-                    storage.save()
+                if line_splts[3].find('"') > 1:
+                    obj_replace = line_splts[3].replace('"', '')
+                    if obj_replace.find(".") > 0:
+                        cast = float
+                    else:
+                        cast = int
+                    if line_splts[2] not in ["updated_at", "id", "created_at"]:
+                        try:
+                            new_obj_replace = cast(obj_replace)
+                        except Exception:
+                            new_obj_replace = obj_replace
+                        obj_1.__dict__[line_splts[2]] = new_obj_replace
+                        dict_1[key_1] = obj_1
+                        storage.save()
             else:
                 print("** no instance found **")
 

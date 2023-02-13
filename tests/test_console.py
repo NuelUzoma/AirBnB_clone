@@ -128,6 +128,7 @@ class TestConsole(unittest.TestCase):
         with patch('sys.stdout', new=StringIO()) as v:
             HBNBCommand().onecmd("update User " + user_id + " name betty")
             HBNBCommand().onecmd("show User " + user_id)
+            print(v.getvalue())
             self.assertFalse("betty" in v.getvalue())
             HBNBCommand().onecmd("destroy User " + user_id)
         with patch('sys.stdout', new=StringIO()) as v:
