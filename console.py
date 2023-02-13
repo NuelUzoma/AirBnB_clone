@@ -35,7 +35,6 @@ class HBNBCommand(cmd.Cmd):
     """Simple command processor example"""
     prompt = '(hbnb) '
 
-
     def default(self, line: str) -> None:
         """This function gets called when the command doesnt
         have an implemetation
@@ -202,7 +201,7 @@ class HBNBCommand(cmd.Cmd):
         """Count the total number of an object in memory"""
         line_split = line.split()
         all_objects = storage.all()
-        
+
         count = 0
         for value in all_objects.values():
             if type(value) is eval(line_split[0]):
