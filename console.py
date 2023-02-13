@@ -35,7 +35,6 @@ class HBNBCommand(cmd.Cmd):
     """Simple command processor example"""
     prompt = '(hbnb) '
 
-
     def default(self, line: str) -> None:
         """This function gets called when the command doesnt
         have an implemetation
@@ -92,10 +91,11 @@ class HBNBCommand(cmd.Cmd):
             if key not in storage.all():
                 print("** no instance found **")
             else:
-                attributes = storage.attributes()[classname]
+                attributes = eval(classname).__dict__
+                print(attributes)
                 for attribute, value in d.items():
                     if attribute in attributes:
-                        value = attributes[attribute](value)
+                        print("waiting")
                     setattr(storage.all()[key], attribute, value)
                 storage.all()[key].save()
 
@@ -202,7 +202,7 @@ class HBNBCommand(cmd.Cmd):
         """Count the total number of an object in memory"""
         line_split = line.split()
         all_objects = storage.all()
-        
+
         count = 0
         for value in all_objects.values():
             if type(value) is eval(line_split[0]):
@@ -241,11 +241,14 @@ class HBNBCommand(cmd.Cmd):
                 obj_1 = dict_1[key_1]
                 obj_replace = line_splts[3].replace('"', '')
 
+                if obj_replace.find(".") > 0:
+                    cast = float
+                else:
+                    cast = int
                 if line_splts[2] not in ["updated_at", "id", "created_at"]:
-                    if line_splts[2] in obj_1.__dict__.keys():
-                        new_obj_replace = type(obj_1.__dict__[line_splts[2]])
-                        (obj_replace)
-                    else:
+                    try:
+                        new_obj_replace = cast(obj_replace)
+                    except Exception:
                         new_obj_replace = obj_replace
                     obj_1.__dict__[line_splts[2]] = new_obj_replace
                     dict_1[key_1] = obj_1
