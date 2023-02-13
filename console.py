@@ -194,7 +194,7 @@ class HBNBCommand(cmd.Cmd):
                     list_objs.append(str(value))
             else:
                 for value in objectts.values():
-                    if isinstance(value, eval(line_splt[0])):
+                    if type(value) == eval(line_splt[0]):
                         list_objs.append(str(value))
             print(list_objs)
 
