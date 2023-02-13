@@ -98,7 +98,7 @@ class HBNBCommand(cmd.Cmd):
         try:
             obj = eval(line)()
         except NameError:
-            print("** class doesn't exists **")
+            print("** class doesn't exist **")
             return
 
         print(obj.id)
