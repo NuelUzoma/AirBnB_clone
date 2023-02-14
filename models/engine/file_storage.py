@@ -45,7 +45,7 @@ class FileStorage():
         for key, value in dct.items():
             objdict[key] = value.to_dict()
         with open(FileStorage.__file_path, 'w') as file:
-            json.dump(objdict, file)
+            json.dump(objdict, file, indent=4)
 
     def reload(self):
         '''

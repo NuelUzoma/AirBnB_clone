@@ -78,8 +78,7 @@ class HBNBCommand(cmd.Cmd):
                 storage.all()[key].save()
 
     def do_quit(self, line):
-        """Quit command to exit the program
-        """
+        """Quit command to exit the program"""
         return True
 
     def do_EOF(self, line):
@@ -90,7 +89,7 @@ class HBNBCommand(cmd.Cmd):
         pass
 
     def do_create(self, line):
-        """Creates a new instance of BaseModel and saves it to JSON File"""
+        """Creates a new instance of a class and saves it to JSON File"""
         if line == "":
             print("** class name missing **")
             return
@@ -181,10 +180,21 @@ class HBNBCommand(cmd.Cmd):
         all_objects = storage.all()
 
         count = 0
-        for value in all_objects.values():
-            if type(value) is eval(line_split[0]):
-                count = count + 1
-        print(count)
+        if line == "":
+            print("** class name missing **")
+        elif len(line_split) > 0 and line_split[0] not in ["BaseModel",
+                                                           "Amenity",
+                                                           "City",
+                                                           "Place",
+                                                           "Review",
+                                                           "State",
+                                                           "User"]:
+            print("** class doesn't exist **")
+        else:
+            for value in all_objects.values():
+                if type(value) is eval(line_split[0]):
+                    count = count + 1
+            print(count)
 
     def do_update(self, line):
         """Updates an instance based on class name and id"""
@@ -216,20 +226,19 @@ class HBNBCommand(cmd.Cmd):
             key_1 = "{}.{}".format(line_splts[0], line_splts[1])
             if key_1 in dict_1.keys():
                 obj_1 = dict_1[key_1]
-                if line_splts[3].find('"') > 1:
-                    obj_replace = line_splts[3].replace('"', '')
-                    if obj_replace.find(".") > 0:
-                        cast = float
-                    else:
-                        cast = int
-                    if line_splts[2] not in ["updated_at", "id", "created_at"]:
-                        try:
-                            new_obj_replace = cast(obj_replace)
-                        except Exception:
-                            new_obj_replace = obj_replace
-                        obj_1.__dict__[line_splts[2]] = new_obj_replace
-                        dict_1[key_1] = obj_1
-                        storage.save()
+                obj_replace = line_splts[3].replace('"', '')
+                if obj_replace.find(".") > 0:
+                    cast = float
+                else:
+                    cast = int
+                if line_splts[2] not in ["updated_at", "id", "created_at"]:
+                    try:
+                        new_obj_replace = cast(obj_replace)
+                    except Exception:
+                        new_obj_replace = obj_replace
+                    obj_1.__dict__[line_splts[2]] = new_obj_replace
+                    dict_1[key_1] = obj_1
+                    storage.save()
             else:
                 print("** no instance found **")
 
