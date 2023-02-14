@@ -17,6 +17,7 @@ class TestState(TestCase):
         State1 = State()
 
         self.assertIsInstance(State1, State)
+        self.assertIsInstance(State1.name, str)
 
         # test attributes values
         self.assertEqual(State1.name, "")
