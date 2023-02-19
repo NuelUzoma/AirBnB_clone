@@ -1,12 +1,15 @@
-.header{
-    color: white;
-    height: 70px;
-    width: 100%;
-    border-bottom: 1px #CCCCCC;
+header {
+  width: 100%;
+  height: 70px;
+  border-bottom: 1px solid #cccccc;
+  display: flex;
+  align-items: center;
 }
 
-.logo{
-    display: flex;
-    align-items: center;
-    margin-left: 20px;
+.header-logo {
+  margin-left: 20px;
+  background-image: url("../images/logo.png");
+  background-repeat: no-repeat;
+  height: 60px;
+  width: 142px;
 }
